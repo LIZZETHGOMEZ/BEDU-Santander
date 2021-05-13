@@ -1,10 +1,10 @@
 
 /*#####################################################################
-					Martes 11 de Mayo de 2021
+		     Martes 11 de Mayo de 2021
                       Lizzeth Gómez Rodríguez
- 					    Ejercicios Sesión 1 
+ 		       Ejercicios Sesión 1 
                             CONSULTAS
-*/#####################################################################
+#####################################################################*/
 
 -- 1. Dentro del mismo servidor de bases de datos, conéctate al esquema classicmodels
 SHOW DATABASES;
@@ -75,7 +75,6 @@ SELECT customerName, country FROM customers WHERE country = 'USA'OR country = 'F
 
 -- 15. Dentro de la tabla customers, obtén el nombre, pas y límite de crédito de todos los clientes 
 -- cuyo país sea USA o France y cuyo límite de crédito sea mayor a 100000. Para este ejercicio ten cuidado con los paréntesis.
-
 SELECT customerName, country, creditLimit FROM customers WHERE country = 'USA' OR country = 'France' AND creditLimit > 10000;
 
 -- 16. Dentro de la tabla offices, obtén el código de la oficina, ciudad, teléfono y país de aquellas oficinas que se encuentren en USA o France.
