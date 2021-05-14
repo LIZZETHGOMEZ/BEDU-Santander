@@ -11,6 +11,7 @@ SHOW TABLES;
 DESCRIBE articulo;
 DESCRIBE puesto;
 DESCRIBE venta;
+Abrir tabla de descipción de datos [aquí](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/blob/main/Introduccion%20a%20Bases%20de%20Datos/sesion_1/WhatsApp%20Image%202021-05-14%20at%2008.11.21.jpeg)
 
 #--------------------------------------------------------------------------------------------------
 /* RETO 2
