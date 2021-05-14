@@ -1,10 +1,10 @@
 
-/*#####################################################################
-		     Martes 11 de Mayo de 2021
-                      Lizzeth Gómez Rodríguez
- 		       Ejercicios Sesión 1 
-                            CONSULTAS
-#####################################################################*/
+/*###############################################################################
+		    	       Martes 11 de Mayo de 2021
+                      		Lizzeth Gómez Rodríguez
+ 		                  Ejercicios Sesión 1 
+                                     CONSULTAS
+#################################################################################*/
 
 -- 1. Dentro del mismo servidor de bases de datos, conéctate al esquema classicmodels
 SHOW DATABASES;
