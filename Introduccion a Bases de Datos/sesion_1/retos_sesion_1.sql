@@ -11,6 +11,7 @@ SHOW TABLES;
 DESCRIBE articulo;
 DESCRIBE puesto;
 DESCRIBE venta;
+-- Véase el archivo tabla_reto_1.jpeg
 
 #--------------------------------------------------------------------------------------------------
 /* RETO 2
