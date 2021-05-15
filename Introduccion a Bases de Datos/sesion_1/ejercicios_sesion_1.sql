@@ -55,7 +55,9 @@ FROM employees WHERE jobTitle != 'Sales Rep';
 
 -- 10. Dentro de la tabla employees, obtén el apellido, nombre y código de oficina de todos los empleados 
 -- cuyo código de oficina sea mayor a 5.
-SELECT lastName, firstName, jobTitle, officeCode FROM employees WHERE officeCode > 5;
+SELECT lastName, firstName, jobTitle, officeCode 
+FROM employees 
+WHERE officeCode > 5;
 
 -- 11. Dentro de la tabla employees, obtén el apellido, nombre y código de oficina de todos los empleados 
 -- cuyo cdigo de oficina sea menor o igual 4.
@@ -64,18 +66,26 @@ SELECT lastName, firstName, officeCode FROM employees WHERE officeCode <= 4;
 -- 12. Dentro de la tabla customers, obtén el nombre, país y estado de todos los clientes cuyo país 
 -- sea USA y cuyo estado sea CA.
 SELECT* FROM customers;
-SELECT customerName, country, state FROM customers WHERE country = 'USA' AND state = 'CA';
+SELECT customerName, country, state 
+FROM customers 
+WHERE country = 'USA' AND state = 'CA';
 
 -- 13. Dentro de la tabla customers, obtén el nombre, país, estado y límite de crédito de todos los clientes 
 -- cuyo país sea, USA, cuyo estado sea CA y cuyo límite de crédito sea mayor a 100000.
-SELECT customerName, country, state, creditLimit FROM customers WHERE country = 'USA' AND state = 'CA' AND creditLimit > 10000;
+SELECT customerName, country, state, creditLimit 
+FROM customers 
+WHERE country = 'USA' AND state = 'CA' AND creditLimit > 10000;
 
 -- 14. Dentro de la tabla customers, obtén el nombre y país de todos los clientes cuyo país sea USA o France
-SELECT customerName, country FROM customers WHERE country = 'USA'OR country = 'France';
+SELECT customerName, country 
+FROM customers 
+WHERE country = 'USA'OR country = 'France';
 
 -- 15. Dentro de la tabla customers, obtén el nombre, pas y límite de crédito de todos los clientes 
 -- cuyo país sea USA o France y cuyo límite de crédito sea mayor a 100000. Para este ejercicio ten cuidado con los paréntesis.
-SELECT customerName, country, creditLimit FROM customers WHERE country = 'USA' OR country = 'France' AND creditLimit > 10000;
+SELECT customerName, country, creditLimit 
+FROM customers 
+WHERE country = 'USA' OR country = 'France' AND creditLimit > 10000;
 
 -- 16. Dentro de la tabla offices, obtén el código de la oficina, ciudad, teléfono y país de aquellas oficinas que se encuentren en USA o France.
 SELECT* FROM offices;
@@ -107,12 +117,14 @@ ORDER BY contactLastName DESC, customerName;
 
 -- 22. Dentro de la tabla customers, obtén el número de cliente, nombre de cliente 
 -- y el límite de crédito de los cinco clientes con el límite de crédito más alto (top 5).
-SELECT customerNumber, customerName, creditLimit FROM customers
+SELECT customerNumber, customerName, creditLimit 
+FROM customers
 ORDER BY creditLimit DESC LIMIT 5;
 
 -- 23. Dentro de la tabla customers, obtén el número de cliente, nombre de cliente 
 -- y el límite de crédito de los cinco clientes con el límite de crédito más bajo diferente de 0.
-SELECT customerNumber, customerName, creditLimit FROM customers
+SELECT customerNumber, customerName, creditLimit 
+FROM customers
 WHERE creditLimit != 0
 ORDER BY creditLimit LIMIT 5;
 
