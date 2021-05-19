@@ -1,9 +1,9 @@
-/*#####################################################################
+/*#################################################################################################
 					Jueves 13 de Mayo de 2021
-                      Lizzeth Gómez Rodríguez
+                                          Lizzeth Gómez Rodríguez
  					    Ejercicios Sesión 2 
-						    SUBCONSULTAS
-#####################################################################
+						SUBCONSULTAS
+###################################################################################################
 */
 
 -- 1. Dentro de la tabla employees, obten el número de empleado, apellido y nombre de todos los empleados cuyo nombre empiece con a.
@@ -42,8 +42,10 @@ FROM products;
 SELECT productCode, productName
 FROM products
 WHERE productCode LIKE '%_20%';
-#Notemos que el underscore "_" es un operador, por lo que para ser reconoido como una cadena de carácteres o 'string', deberemos usar slash (/)
+
+# Notemos que el underscore "_" es un operador, por lo que para ser reconoido como una cadena de carácteres o 'string', deberemos usar slash (/)
 # Con la palabra reservada ESCAPE, así "_20" será reconocido tal cual como cadena incluyendo el underscore.
+
 SELECT productCode, productName
 FROM products
 WHERE productCode LIKE '%/_20%' ESCAPE '/';
