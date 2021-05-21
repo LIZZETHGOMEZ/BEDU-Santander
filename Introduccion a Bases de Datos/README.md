@@ -7,6 +7,7 @@ El repositorio se compone de una carpeta por sesion, dentro de cada carpeta se e
 1. **ejercicios_sesion_x:** son los ejercicios de la sesion x (Para revisión de BEDU)
 2. **notas_sesion_x:** son las notas de la sesion x
 3. **retos_sesion_x:** son los retos de la sesion x (Para revisión de BEDU)
+Algunas sesiones contienen archivos .jpg
 
 ### Contenido:
 1. [sesion_1](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/tree/main/Introduccion%20a%20Bases%20de%20Datos/sesion_1): Fundamentos de SQL
