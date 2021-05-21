@@ -11,3 +11,4 @@ El repositorio se compone de una carpeta por sesion, dentro de cada carpeta se e
 ### Contenido:
 1. [sesion_1](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/tree/main/Introduccion%20a%20Bases%20de%20Datos/sesion_1): Fundamentos de SQL
 2. [sesion_2](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/tree/main/Introduccion%20a%20Bases%20de%20Datos/sesion_2): Agrupaciones y subconsultas
+3. [sesion_3](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/tree/main/Introduccion%20a%20Bases%20de%20Datos/sesion_3): Joins y vistas
