@@ -3,10 +3,10 @@ Los archivos de esta carpeta son todos los ejercicios y retos realizados en cada
 **BEDU-Santander-2021.**
 
 ### Estructura del Repositorio:
-El repositorio se compone de una carpeta por sesion, dentro de cada carpeta se encuentra, tres archivos: \
+El repositorio se compone de una carpeta por sesion, dentro de cada carpeta se encuentra, tres archivos:
 1. **ejercicios_sesion_x:** son los ejercicios de la sesion x (Para revisión de BEDU)
 2. **notas_sesion_x:** son las notas de la sesion x
-3. **retos_sesion_x:** son los retos de la sesion x (Para revisión de BEDU) \
+3. **retos_sesion_x:** son los retos de la sesion x (Para revisión de BEDU)
 
 Algunas sesiones contienen archivos .jpg debido a que algunos retos no pueden reflejarse en codigo, o simplemente es preferible la captura de screenshot como prueba de las actividades en las sesiones.
 
