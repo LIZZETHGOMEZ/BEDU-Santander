@@ -1,4 +1,4 @@
-# SESION 2: Agrupaciones y subconsultas
+# Sesion 2: Agrupaciones y subconsultas
 En esta sesion se aprende a filtrar información con ayuda de los comandos `LIKE` y `WHERE`, asi como una introducción a las funciones `SUM`, `COUNT`, entre otras, el uso de la extracción de cadenas de texto por medio del símbolo `%` y subcunsultas utilizando ` GROUP BY`
 
 
