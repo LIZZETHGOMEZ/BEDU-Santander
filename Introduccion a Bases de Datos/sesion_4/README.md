@@ -5,7 +5,7 @@
 Ejercicios de la cuarta sesión (Evidencias para BEDU)
 3. [notas_sesion_4](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/blob/main/Introduccion%20a%20Bases%20de%20Datos/sesion_4/notas_sesion_4.sql)
 4. [retos_sesion_4](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/blob/main/Introduccion%20a%20Bases%20de%20Datos/sesion_4/retos_sesion_4.sql):
-Retos de la cuarta sesión, véase a la par los archivos de extension PNG (Evdencias para BEDU)
+Retos 1 y 2 de la cuarta sesión, véase a la par los archivos de extension PNG (Evdencias para BEDU)
 6. [tabla_movies.PNG](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/blob/main/Introduccion%20a%20Bases%20de%20Datos/sesion_4/tabla_movies.PNG):
 Evidencias para BEDU del reto 2 de la importación del archivo `movies`, léase el archivo "retos_sesion_4".
 5. [tabla_movies_con_registro](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/blob/main/Introduccion%20a%20Bases%20de%20Datos/tabla_movies_con_registro.PNG):
