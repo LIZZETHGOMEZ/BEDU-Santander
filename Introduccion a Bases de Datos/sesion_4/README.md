@@ -2,7 +2,7 @@
 
 ## Contenido
 1. [ejercicios_sesion_4](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/blob/main/Introduccion%20a%20Bases%20de%20Datos/sesion_4/ejercicios_sesion_4.sql):
-Ejercicios de la cuarta sesi+on (Evidencias para BEDU)
+Ejercicios de la cuarta sesión (Evidencias para BEDU)
 3. [notas_sesion_4](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/blob/main/Introduccion%20a%20Bases%20de%20Datos/sesion_4/notas_sesion_4.sql)
 4. [retos_sesion_4](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/blob/main/Introduccion%20a%20Bases%20de%20Datos/sesion_4/retos_sesion_4.sql):
 Retos de la cuarta sesión, véase a la par los archivos de extension PNG (Evdencias para BEDU)
