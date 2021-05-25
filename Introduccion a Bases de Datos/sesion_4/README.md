@@ -2,7 +2,7 @@
 En esta sesión se aprende a configurar el servidor local para trabajar sobre nuestra propia computadora, para ello se utiliza la herramienta SQL server, y además se hace una introducción a Mongo DB conectando Mongo DB Atlas con nuestro cliente Mongo DB Compass.
 
 ## Contenido
-1. [ejercicios_sesion_4](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/blob/main/Introduccion%20a%20Bases%20de%20Datos/sesion_4/ejercicios_sesion_4.sql):
+1. [ejercicios_sesion_4](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/tree/main/Introduccion%20a%20Bases%20de%20Datos/sesion_4/ejercicios_sesion_4):
 Ejercicios de la cuarta sesión (Evidencias para BEDU)
 2. [reto_3_mongo.PNG](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/blob/main/Introduccion%20a%20Bases%20de%20Datos/sesion_4/reto_3_mongo.PNG):
 Ultimo reto de la cuarta sesión, se muestran las colecciones creadas de los tres acrhivos (movies, ratings y users) y la importacion de los datos.
