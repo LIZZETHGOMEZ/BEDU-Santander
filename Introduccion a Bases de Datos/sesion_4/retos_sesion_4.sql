@@ -39,7 +39,8 @@ CREATE TABLE IF NOT EXISTS ratings (
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (movie_id) REFERENCES movies(id)
     );
-    
+ 
+DESCRIBE ratings;
     
 
 # RETO 2
