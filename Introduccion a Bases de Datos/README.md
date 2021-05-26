@@ -15,3 +15,5 @@ Algunas sesiones contienen archivos .jpg debido a que algunos retos no pueden re
 2. [sesion_2](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/tree/main/Introduccion%20a%20Bases%20de%20Datos/sesion_2): Agrupaciones y subconsultas
 3. [sesion_3](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/tree/main/Introduccion%20a%20Bases%20de%20Datos/sesion_3): Joins y vistas
 4. [sesion_4](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/tree/main/Introduccion%20a%20Bases%20de%20Datos/sesion_4): Configuración de Bases de Datos Locales
+5. [sesion_5](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/tree/main/Introduccion%20a%20Bases%20de%20Datos/sesion_5): Fundamentos de MongoBD
+
