@@ -36,11 +36,11 @@
 
 ![image](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/blob/main/Introduccion%20a%20Bases%20de%20Datos/sesion_5/ejercicios_sesion_5/ejercicio_9.PNG)
 
-10. Obtén la empresa con el menor número de empleados. (Observese que no hay una unica empresa con cero empleados sino más de una)
+10. Obtén la empresa con el menor número de empleados. (Observese que no hay una única empresa con cero empleados sino más de una)
 
 ![image](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/blob/main/Introduccion%20a%20Bases%20de%20Datos/sesion_5/ejercicios_sesion_5/ejercicio_10.PNG)
 
-11. Obtén la empresa con el mayor número de empleados. (Aqui se limitó a 3 y se observa que si hay una única empresa con más empleados que las demás y es "IBM"
+11. Obtén la empresa con el mayor número de empleados. (Aquí se limitó a 3 y se observa que si hay una única empresa con más empleados que las demás y es "IBM"
 
 ![image](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/blob/main/Introduccion%20a%20Bases%20de%20Datos/sesion_5/ejercicios_sesion_5/ejercicio_11.PNG)
 
