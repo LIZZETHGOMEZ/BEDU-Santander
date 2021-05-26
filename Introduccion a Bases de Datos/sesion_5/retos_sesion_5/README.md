@@ -1,6 +1,6 @@
 ## Retos de la sesión 5
 
-En esta sesión hubo dos retos, cada uno con sus respectivos ejercicios, los cuales se enlistan a continuación:
+Esta sesión contiene dos retos, cada uno con sus respectivos ejercicios, los cuales se enlistan a continuación:
 ### Reto 1
  1. Fecha, nombre y texto de cada comentario.
 
