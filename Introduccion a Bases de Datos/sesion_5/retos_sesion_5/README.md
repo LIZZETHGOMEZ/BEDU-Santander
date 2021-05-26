@@ -1,10 +1,5 @@
-# Sesión 5: Funtamentos de MongoDB
-En esta sesión se utiliza Mongo Compass y el conjunto de datos muestra que Mongo Atlas nos proporciona. 
-En esta sesión se realizan únicamente consultas con formato JSON por lo que no hay código para mostrar y por lo que las evidencias son screenshots de formato PNG,
-las cuales se muestran en este REAMDE:
-
-## Contenido
-
+## Retos de la sesión 5
+En esta sesión hubo dos retos, cada uno con sus respectivos ejercicios, los cuales se enlistan a continuación:
 ### Reto 1
  1. Fecha, nombre y texto de cada comentario.
 
