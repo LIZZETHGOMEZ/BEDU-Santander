@@ -48,6 +48,6 @@
 
 ![image](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/blob/main/Introduccion%20a%20Bases%20de%20Datos/sesion_5/ejercicios_sesion_5/ejercicio_12.PNG)
 
-13. Obtén el viaje con menor duración.
+13. Obtén el viaje con menor duración. (Por default el ordenamiento es ascendente, por lo que el primer documento/registro siempre será el menor)
 
 ![image](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/blob/main/Introduccion%20a%20Bases%20de%20Datos/sesion_5/ejercicios_sesion_5/ejercicio_13.PNG)
