@@ -50,29 +50,27 @@ DESCRIBE ratings;
 3. Finalmente, añade un registro en cada tabla usando INSERT INTO.*/
 
 -- Ejercicio 1
--- Cargamos el archivo (Véase el archivo tabla_movies.PNG como evidencia de la importacion de los datos)
+-- Cargamos el archivo (Véase el README de la carpeta retos_sesion_4 como evidencia de la importación de los datos)
 SELECT* FROM movies LIMIT 10;
 
 -- Ejercicio 2
--- Al limpiar los datos y pasarlos a csv, mi compuadora no los soporto, por lo que nunca se pudo hacer la limpieza
--- Pero el ejercicio anterior demuestra la evidencia de que si se aprendio a realizar la limpieza y cargar los datos.
+-- Debido al gran peso de los datos no pudieron ser cargados, sin embargo el ejercicio anterior muestra la evidencia de que sí se aprendió a realizar la limpieza y cargar los datos.
 SELECT* FROM ratings LIMIT 10;
 
 -- Ejercicio 3
--- Añadimos un registro a la tabla movies (Véase tabla_movies_con_registro.PNG)
+-- Añadimos un registro a la tabla movies (Véase el README de retos_sesion_4 como evidencia de la adición del registro)
 SELECT*
 FROM movies
 ORDER BY id DESC LIMIT 10; # Queremos saber el id del ultimo registro
 
 INSERT INTO movies (id, title, genre) VALUES(3953, 'Harry Potter', 'Action');
 
--- Comprobamos el nuevo registro (tabla_movies_con_registro.PNG)
+-- Comprobamos el nuevo registro (Véase el README de la carpeta retos_sesion_4)
 SELECT*
 FROM movies
 ORDER BY id DESC LIMIT 3;
 
 -- Añadimos un registro a la tabla ratings
--- Se hace la simulacion del codigo, pero debido a la gran cantida de datos, el archivo ratings no pudo ser cargado.
+-- Se hace la simulación del código, pero debido a la gran cantida de datos, el archivo ratings no pudo ser cargado.
 INSERT INTO ratings(user_id, movie_id, rating, time_stamp) VALUES(6041, 1194, 5, 978300760)
 
-# Tarea Moral: Apartado Opcional de la sesion 4
