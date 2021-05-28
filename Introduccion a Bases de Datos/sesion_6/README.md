@@ -3,5 +3,5 @@ Se utilizan las bases muestra que nos porporciona Mongo Atlas, se utilizan las e
 
 ## Contenido:
 
-1. ejercicios_sesion_6
-2. retos_sesion_6
+1. [ejercicios_sesion_6](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/tree/main/Introduccion%20a%20Bases%20de%20Datos/sesion_6/ejercicios_sesion_6)
+2. [retos_sesion_6](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/tree/main/Introduccion%20a%20Bases%20de%20Datos/sesion_6/retos_sesion_6)
