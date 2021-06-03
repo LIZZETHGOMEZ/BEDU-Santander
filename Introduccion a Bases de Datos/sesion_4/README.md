@@ -6,4 +6,4 @@ En esta sesión se aprende a configurar el servidor local para trabajar sobre nu
 Ejercicios de la cuarta sesión (Evidencias para BEDU)
 2. [retos_sesion_4](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/blob/main/Introduccion%20a%20Bases%20de%20Datos/sesion_4/retos_sesion_4):
 Retos de la cuarta sesion incluye archivos .sql y .PNG segun corresponda la actividad. (Evidencias BEDU)
-3. [notas_sesion_4](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/blob/main/Introduccion%20a%20Bases%20de%20Datos/sesion_4/notas_sesion_4)
+3. [notas_sesion_4](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/blob/main/Introduccion%20a%20Bases%20de%20Datos/sesion_4/notas_sesion_4.sql)
