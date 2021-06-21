@@ -69,7 +69,7 @@
             x <- sort(x)
             mid =  length(x)/2
             y <- x[(mid):(mid + 1)]
-            print((y[1]+ y[2])/2)
+            print(mean(y[1]+ y[2]))
             
         }
         
