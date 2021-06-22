@@ -1,6 +1,6 @@
 ## Sesión 2: Programación y manipulación de datos
-Esta sesión se concentra en conocer los temas clave de la programación, operadodes matemáticos, estructuras de control como condicionales (if, else) lopps (while y for)
-y un poco de manipulación de datos con la biblioteca `dplyr` usando `filter`, `select` entre otros.
+Esta sesión se concentra en conocer los temas clave de la programación, operadodes matemáticos, un poco de estadística con R, (media, medaiana, moda, IQR)
+y un poco de manipulación de datos con la biblioteca `dplyr` usando `filter`, `select`, y la familia de comandos ` apply` entre otros.
 
 ### Contenido
 1. [sesion_2_postwork](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/blob/main/Programaci%C3%B3n%20y%20Estad%C3%ADstica%20con%20R/sesion_2/sesion_2_postwork.R):
