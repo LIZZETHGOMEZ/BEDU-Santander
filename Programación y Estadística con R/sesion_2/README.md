@@ -1,5 +1,5 @@
 ## Sesión 2: Programación y manipulación de datos
-Esta sesión se concentra en conocer los temas clave de la programación, operadodes matemáticos, un poco de estadística con R, (media, medaiana, moda, IQR)
+Esta sesión se concentra en conocer los temas clave de la programación, operadodes matemáticos, un poco de estadística con R, (media, mediana, moda, IQR)
 y un poco de manipulación de datos con la biblioteca `dplyr` usando `filter`, `select`, y la familia de comandos ` apply` entre otros.
 
 ### Contenido
