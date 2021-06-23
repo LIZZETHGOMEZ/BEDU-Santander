@@ -4,3 +4,4 @@ El presente repositorio contiene todas las actividades del work del Módulo 2 de
 ### Contenido
 1. [Sesión_1](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/tree/main/Programaci%C3%B3n%20y%20Estad%C3%ADstica%20con%20R/sesion_1): Introducción a R
 2. [Seción_2](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/tree/main/Programaci%C3%B3n%20y%20Estad%C3%ADstica%20con%20R/sesion_2): Programación y manipulación de datos
+3. [Sesión_3](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/tree/main/Programaci%C3%B3n%20y%20Estad%C3%ADstica%20con%20R/sesion_3): Análisis Exploratorio de Datos (AED)
