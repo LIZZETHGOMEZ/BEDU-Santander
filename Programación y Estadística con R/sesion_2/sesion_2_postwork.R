@@ -40,12 +40,8 @@
     # Guardamos los archivos en una lista para facilirtar manipulacion
     lista <- lapply(dir(), read.csv)
     
-    
     # 2. Revisar estructra de datos
-    for(df in lista){
-        str(df); head(df); summary(df)
-    }
-    
+    str(lista)
     
     # 3 seleccionamos columnas de interes, almacenamos y corregimos fechas
     library(dplyr)
@@ -55,9 +51,9 @@
     lista <- lapply(lista, mutate, Date = as.Date(Date,"%d/%m/%y"))
     lista[2] 
     
+    # Guardamos
     data <- do.call(rbind, lista)
-    data    
-    
+    write.csv(data, "soccer.csv", row.names = F)  
     
      
     
