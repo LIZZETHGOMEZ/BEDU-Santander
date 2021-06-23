@@ -8,8 +8,11 @@
     # =========================================================================
     # RETO 1
     
+    library(dplyr)
+    library(ggplot2)
+    
     # 1. Carga el data set BD_Altura_Alunos.csv 
-    data <- read.csv("Data/BD_Altura_Alunos.csv", sep =  = ";")
+    data <- read.csv("Data/BD_Altura_Alunos.csv", sep = ";")
     colnames(data)
     str(data)
     
@@ -42,7 +45,7 @@
     data %>%
         ggplot() +
         aes(MIN) +
-        geom_histogram(bin = 40, col = "black", fill = "palegreen") +
+        geom_histogram(bins = 30, col = "black", fill = "palegreen") +
         geom_vline(xintercept = mean(data$MIN), col = "red", lwd = 1) +
         xlab("Minutos") + ylab("Frecuencia")
 
@@ -62,18 +65,54 @@
         aes(Weight, Height) +
         geom_point( col = "blue") +
         xlab("Peso") + ylab(" Altura") +
-        ggtitle(" Grafico de correlacion entre altura y peso") 
+        ggtitle(" Gráfico de correlación entre altura y peso") 
+    
+    # Interpretacion ----------------------------------------------------
+    # El scatterplot muestra una relación positiva, sin emabrgo se observa que existe bastante dispersión 
+    # entre los datos y un outlier en la esquina superior derecha.
+    # A su vez, los datos indican que a mayor altura, mayor es el peso del jugador.
+    
+    
     
     # 4. Utiliza la función which.max para saber quién es el jugador más alto, una vez hecho esto, 
     # presenta los resultados en una leyenda que diga "El jugador más alto es: Name, con una altura de: Height". Las unidades de altura deben ser en metros.
-    which.max(data$Height)
-    data[which.max(data$Height)]$Name
+    fila <- which.max(data$Height)
+    jugador <- data[fila, "Name"]
+    altura <- data[fila, "Height"]
+           
+    print(paste0("El jugador más alto es: ", jugador, " con una altura de: ", round(altura/100,2), "m"))
     
+    
+    # 5. Ahora ubicamos al jugador más bajo
+    fila <- which.min(data$Height)
+    jugador <- data[fila, "Name"]
+    altura <- data[fila, "Height"]
+    
+    print(paste0("El jugador más bajo es: ", jugador, " con una altura de: ", round(altura/100,2), "m"))
+    
+    # 6. ¿Cuál es la altura promedio?, representa el resultado en una frase que diga: 
+    media <- mean(data$Height, na.rm = T)
+    print(paste("La altura promedio es:", round(media/100,2), "m"))
+    
+    # 7. Generar un scatterplot donde se representen las Asistencias totales (AST.TOV) vs Puntos (PTS), además has un face wrap con la posición (Pos).
+    library(scales)
+    
+    data %>% 
+        ggplot() +
+        aes(AST.TOV, PTS, col = Pos) +
+        geom_point() +
+        facet_wrap("Pos") +
+        xlab("Asistencias Totales") +
+        ylab("Puntos") +
+        theme_bw() +
+        theme(legend.position = 0)
 
     
     
-    # Utiliza la función which.min para saber quién es el jugador más bajito, una vez hecho esto, presenta los resultados en una leyenda que diga "El jugador más bajito es: Name, con una altura de: Height". Las unidades de altura deben ser en metros.
-    # 
-    # ¿Cuál es la altura promedio?, representa el resultado en una frase que diga: "La altura promedio es: ALTURA"
-    # 
-    # Generar un scatterplot donde se representen las Asistencias totales (AST.TOV) vs Puntos (PTS), además has un face wrap con la posición (Pos).
+    
+    
+    
+    
+    
+     
+    
