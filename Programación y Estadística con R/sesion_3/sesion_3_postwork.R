@@ -61,6 +61,3 @@
         ylab("Probabilidad %") +
         ggtitle("Probabilidad de anotar goles como visitante")
     
-    
-        
-    
