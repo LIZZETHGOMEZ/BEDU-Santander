@@ -14,6 +14,7 @@
     
     dir <- "C:/Users/GOMEZ/Documents/BEDU_Santander/Programación y Estadística con R/sesion_1"
     setwd(dir)
+    library(dplyr)
     
     
     # 1. cargamos los datos
