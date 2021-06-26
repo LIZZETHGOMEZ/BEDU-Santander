@@ -62,10 +62,11 @@
     
     
     # PROBABILIDAD CONJUNTA
-    probabilidades <- mutate(probabilidades, proba_conjunta = proba_casa*proba_visitante)
-    
-    # RESULTADO FINAL con probabilidades de gol en casa, como visitante y conjunta
-    probabilidades
+    conjunta <- data[,c(6:7)]
+    conjunta <- table(conjunta) # Freq conjunta
+    names(dimnames(conjunta)) <- c("Home", "Away") 
+    proba_conj <- prop.table(conjunta)
+    proba_conj    
     
     
     
