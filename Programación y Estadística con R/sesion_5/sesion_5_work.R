@@ -1,6 +1,6 @@
         
     # ##########################################################################
-    #                       Sesion_4 POSTWORK
+    #                       Sesion_5 WORK
     #                     Lizzeth Gomez Ridriguez
     # ##########################################################################
 
@@ -188,13 +188,16 @@
     dim(Default)
     str(Default)
     
-    # 2. Usando ggplot del paquete ggplot2, realicemos un gráfico de dispersión con la variable balance en el eje x, la variable income en el eje y, diferenciando las distintas categorías en la variable default usando el argumento colour. Lo anterior para estudiantes y no estudiantes usando facet_wrap.
+    # 2. Usando ggplot del paquete ggplot2, realicemos un gráfico de dispersión con la variable balance en el eje x, la variable income en el eje y, diferenciando las distintas categorías en la variable default usando el argumento colour. 
+    # Lo anterior para estudiantes y no estudiantes usando facet_wrap.
     
     ggplot(Default, aes(x = balance, y = income, colour = default)) + 
         geom_point() + facet_wrap('student') + 
         theme_grey() + ggtitle("Datos Default")
     
-    # 3. Generemos un vector de índices llamado train, tomando de manera aleatoria 5000 números de los primeros 10,000 números naturales, esto servirá para filtrar el conjunto de entrenamiento y el conjunto de prueba del data frame Default. Realicemos el gráfico de dispersión análogo al punto 2, pero para los conjuntos de entrenamiento y de prueba.
+    # 3. Generemos un vector de índices llamado train, tomando de manera aleatoria 5000 números de los primeros 10,000 números naturales, 
+    # esto servirá para filtrar el conjunto de entrenamiento y el conjunto de prueba del data frame Default. 
+    # Realicemos el gráfico de dispersión análogo al punto 2, pero para los conjuntos de entrenamiento y de prueba.
     
     set.seed(2020)
     # sample(data, size)
@@ -212,7 +215,8 @@
         geom_point() + facet_wrap('student') + 
         theme_light() + ggtitle("Conjunto de prueba")
     
-    # 4. Ahora utilicemos la función tune junto con la función svm para seleccionar el mejor modelo de un conjunto de modelos, los modelos considerados serán aquellos obtenidos al variar los valores de los parámetros cost y gamma (usaremos un kernel radial).
+    # 4. Ahora utilicemos la función tune junto con la función svm para seleccionar el mejor modelo de un conjunto de modelos,
+    # los modelos considerados serán aquellos obtenidos al variar los valores de los parámetros cost y gamma (usaremos un kernel radial).
     
     # Ahora utilizamos la función `tune` junto con la función `svm` para 
     # seleccionar el mejor modelo de un conjunto de modelos, los modelos 
@@ -228,16 +232,15 @@
                    )
     )
     
-    # Arroja cost = 100 y gamma = 151
+    # Arroja cost = 10 y gamma = 0.51
     
     # Se ha elegido el mejor modelo utilizando *validación cruzada de 10 
     # iteraciones*
     
-    # summary(tune.rad)
+    summary(tune.rad)
     
     # Aquí un resumen del modelo seleccionado
-    
-    # summary(tune.rad$best.model)
+    summary(tune.rad$best.model)
     
     # A continuación solo usamos los valores de cost y gamma que producen el menor error de prueba estimado, considerando los conjuntos de valores en el código anterior
     
