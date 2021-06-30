@@ -1,4 +1,9 @@
-    
+        
+    # ##########################################################################
+    #                         Sesion_5 RETOS
+    #                     Lizzeth Gomez Ridriguez
+    # ##########################################################################
+
     # Reto 1. Regresión Lineal Múltiple
     
     # Supongamos que nuestro trabajo consiste en aconsejar a un cliente sobre 
@@ -24,33 +29,37 @@
     str(data)
     attach(data)
     
+    # Graficamos correlacion de las variables
     pairs(~ Sales + TV + Radio + Newspaper, data, gap = 0.4, cex.labels = 1.5)
     
-    # Corremos el modelo
+    # Corremos el modelo de regresion lineal
     m1 <- lm(Sales ~ TV + Radio + Newspaper)
     summary(m1)
     
     
-    # Ajustamos
+    # Ajustamos el modelo eliminando la variable Newspaper por falta de significancia estadistica
     m2 <- update(m1, ~. -Newspaper)
     summary(m2)
    
+    # Graficamos la regresion lienal
     plot(m2$fitted.values, Sales, xlab = "Valores ajustados", ylab = "Price")
     abline(lsfit(m2$fitted.values, Sales))
     
-    
+    # Veamos la distribucion de los residuos estandarizados para cada variable predictora
     StanRes2 <- rstandard(m2)
     par(mfrow = c(2, 2)) # Creamos grid de 2x2
     plot(TV, StanRes2, ylab = "Residuales Estandarizados")
     plot(Radio, StanRes2, ylab = "Residuales Estandarizados")
     plot(Newspaper, StanRes2, ylab = "Residuales Estandarizados")
     
-    qqnorm(StanRes2) # Distribucion de los errores
+    # Distribucion de los errores
+    qqnorm(StanRes2)
     qqline(StanRes2)
         
     hist(StanRes2)
     dev.off()
     
+    # Prueba de Normalidad
     shapiro.test(StanRes2) # p-value < 0.05, por lo tanto no se acepta Ho  
     # no hay normalidad en los datos
     
