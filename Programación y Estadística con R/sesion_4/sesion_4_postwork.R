@@ -19,28 +19,49 @@
     
     # Retomamos las tablas a ocupar ----------------------------------
     
-    # Probabilidad conjunta:
-    data <- read.csv("https://www.football-data.co.uk/mmz4281/1920/SP1.csv")
+    # PROBABILIDAD CONJUNTA:
+    data <- read.csv("../sesion_2/Data/postwork/soccer.csv")
     
-    data <- data[,c(6:7)]
-    conjunta <- table(data)    
+    data <- table(data[,c("FTHG","FTAG")])
+    conjunta <- addmargins(data)
     conjunta <- prop.table(conjunta)  # Tabla de probabilidad conjunta
+    conjunta
+    
+    # PROBABILIDADES MARGINALES
+    for(i in 1:nrow(conjunta)){
+        for(j in 1:ncol(conjunta)){
+            conjunta[i,j] <- conjunta[i,j]/conjunta["Sum","Sum"]
+        }
+    }
+    
+    
+    # 1. TABLA DE COCIENTES
+    for(i in 1:nrow(conjunta)){
+        for(j in 1:ncol(conjunta)){
+            conjunta[i,j] <- conjunta[i,j]/(conjunta[i,"Sum"] * conjunta["Sum",j])
+        }
+    }
+    
+    conjunta
+    
+    
+    # 2. BOOTSTRAP
+    nueva_poblacion <- sample(conjunta, 8)
+    muestra <- sample(nueva_poblacion, replace = T)
+    
+    bootstrap <- replicate(n = 1000, sample(nueva_poblacion, replace = T))
+    
+    
+    
+    
+    hist(bootstrap)
+    
+    library(boot)
+    myBootstrap <- boot(nueva_poblacion, foo, R=1000, cor.type='s')    
+    
+    
+    
+    
+    
 
-    
-    # Probabilidades marginales
-    home <- data[,"FTHG"] ; home <- as.data.frame(table(home))
-    away <- data[,"FTAG"] ; away <- as.data.frame(table(away))
-    
-    # Renombramos columnas 
-    home <- rename(home, goles = home, home = Freq)
-    away <- rename(away, goles = away, away = Freq)
-    
-    # 1. Tabla de cocientes
-    # 1.1 Producto de las probabilidades marginales
-    marginales <- full_join(home,away, by = "goles")
-    marginales <- mutate(producto, home = home/sum(home), away = away/sum(away, na.rm = T), producto = home*away)
-    producto <- marginales[,"producto"]   
-    producto  
-    
-    cocientes <- conjunta/producto
     

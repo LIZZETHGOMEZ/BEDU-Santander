@@ -324,8 +324,10 @@
     tail(as.data.frame(m2))
     1/4.1-1/3.4 # diferencia de medias real
     
+    boxplot(m1, m2)
+    
     # estamos interesados en contrastar las hipótesis 
-    # H0: mu1-mu2 = 0 vs 
+    # H0: mu1-mu2 = 0 
     # H1: mu1-mu2 diferente de 0 (contraste de dos colas)
     
     # El valor observado del estadístico de prueba en este caso está dado por
@@ -337,13 +339,15 @@
     # con un nivel de significancia alpha = 0.05, 
     # debemos encontrar el valor z_{0.025} que satisface P(Z > z_{0.025}) = 0.025.
     
-    (z.025 <- qnorm(p = 0.025, lower.tail = FALSE))
+    (z.025 <- qnorm(p = 0.025, lower.tail = FALSE)) # Area limite del lado derecho
     (z0 < -z.025) | (z0 > z.025)
     
     # fallamos en rechazar la hipótesis nula.
+    # El valor se encuentra dentro del limite superior, dentro del area de aceptacion,
+    # por lo que se acepta la Ho
     
     # p-value El p-value lo podemos calcular como
-    (pvalue <- 2*pnorm(z0, lower.tail = FALSE))
+    (pvalue <- 2*pnorm(z0, lower.tail = FALSE)) # p-value > 0.05 Se acepta Ho
     x <- seq(-4, 4, 0.01)
     y <- dnorm(x)
     plot(x, y, type = "l", xlab="", ylab="")
@@ -355,7 +359,9 @@
     polygon(c(z0, x[x>=z0], max(x)), c(0, y[x>=z0], 0), col="purple")
     axis(side = 1, at = z0, font = 2, padj = 1, lwd = 2)
     
-    # Contraste de hipótesis con muestras pequeñas para mu y mu1 - mu2
+    
+    # ------------------------------------------------------------------------
+    # Contraste de hipótesis con muestras pequeñas (n < 30) para mu y mu1 - mu2
     
     # Contraste de dos colas
     # Dada dos muestras aleatorias de tamaños n1 = 23 y n2 = 20
@@ -367,19 +373,24 @@
     tail(as.data.frame(m2))
     175-160 # diferencia de medias real
     
+    boxplot(m1, m2)
+    
     # estamos interesados en contrastar las hipótesis 
     # H0: mu1-mu2 = 0 vs 
     # H1: mu1-mu2 diferente de 0 (contraste de dos colas)
     
     # El valor observado del estadístico de prueba en este caso está dado por
+    # (Noteos que por ser muestra pequeña la distribucion debe ser t -student)
     t0 <- (mean(m1)-mean(m2)-0)/(sqrt((22*var(m1)+19*var(m2))/(23+20-2))*sqrt(1/23+1/20))
     t0
     
+    # Los grados de libertado se obtiene sumando las dos muestras, quitandole 2, por ser dos muestras
     # que proviene de una distribución t de Student con 23 + 20 - 2 = 41 gl
     
     # Supongamos que estamos interesados en encontrar la región de rechazo (de dos colas) con un nivel de significancia alpha = 0.05, debemos encontrar el valor t_{0.025} que satisface P(T > t_{0.025}) = 0.025.
+    # Calculamos el cuantil de la distribucion t con qt()
     (t.025 <- qt(p = 0.025, df= 41, lower.tail = FALSE))
-    (t0 < -t.025) | (t0 > t.025)
+    (-t0 < -t.025) | (t0 > t.025)
     
     # rechazamos la hipótesis nula.
     
@@ -389,9 +400,7 @@
     ### También podemos usar la función t.test para llevar a cabo el procedimiento 
     # de contraste de hipótesis
     
-    t.test(x = m1, y = m2,
-           alternative = "two.sided",
-           mu = 0, paired = FALSE, var.equal = TRUE)
+    t.test(x = m1, y = m2, alternative = "two.sided", mu = 0, paired = FALSE, var.equal = TRUE)
     
     
     
