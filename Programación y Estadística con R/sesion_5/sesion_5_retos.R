@@ -63,3 +63,89 @@
     shapiro.test(StanRes2) # p-value < 0.05, por lo tanto no se acepta Ho  
     # no hay normalidad en los datos
     
+    
+    # =========================================================================
+    # Reto 2. Máquinas de vectores de soporte
+    
+    # En el archivo de datos csv adjunto se encuentran observaciones correspondientes a dos clases diferentes indicadas por la variable y. 
+    # Únicamente hay dos variables predictoras o características. Realice lo siguiente:
+    
+    # 1. Cargue los paquetes ggplot2 y e1071; observe algunas características del data frame con las funciones tail y dim. 
+    # Obtenga el gráfico de dispersión de los datos diferenciando las dos clases.
+    # 2. Genere de manera aleatoria un vector de índices para filtrar un conjunto de entrenamiento a partir del conjunto de datos dado. 
+    # Con ayuda de las funciones tune y svm ajuste máquinas de vectores de soporte con un kernel radial a los datos de entrenamiento, para valores del parámetro cost igual a 0.1, 1, 10, 100, 1000 y valores del parámetro gamma igual a 0.5, 1, 2, 3, 4. Obtenga un resumen de los resultados.
+    # 3. Con el modelo que tuvo el mejor desempeño en el paso anterior realice clasificación con la función predict y el conjunto de datos de prueba.
+    # Muestre la matriz de confusión.
+    
+    library(ggplot2)
+    library(e1071)
+    
+    data <- read.csv("data/datosclases.csv")
+    tail(data)
+    dim(data)
+    
+    data <- data %>% mutate(y = as.factor(y))
+    
+    data %>% ggplot() +
+        aes(x.1, x.2, colour = y) +
+        geom_point()
+    
+    data %>% ggplot() +
+        aes(x.1, x.2, colour = y) +
+        geom_point() +
+        facet_wrap("y")
+    
+    
+    set.seed(2020)
+    # sample(data, size) 
+    train = sample(nrow(data), round(nrow(data)/2))
+    tail(data[train, ])
+    
+    ggplot(data[train, ], 
+           aes(x.1, x.2, colour = y)) + 
+        geom_point() + facet_wrap('y') + 
+        theme_bw() + ggtitle("Conjunto de entrenamiento")
+    
+    # Ahora el complemento, (todos los que no sean train)
+    ggplot(data[-train, ], 
+           aes(x.1,x.2, colour = y)) + 
+        geom_point() + facet_wrap('y') + 
+        theme_light() + ggtitle("Conjunto de prueba")
+    
+    
+    
+    # Modelamos
+    tune.rad = tune(svm, y~., data[train,],
+                    kernel = "radial",
+                    ranges = list(cost = c(0.1, 1, 10, 100, 1000),gamma = c(0.5, 1, 2, 3, 4))
+    )
+    
+    summary(tune.rad)
+    tune.rad$best.model # Sacamos el mejor modelo
+    
+    best <- svm(y~.,  data = data[train,],
+                kernel = "radial",
+                cost = 1,
+                gamma = 1.5
+    )
+    
+    
+    mc <- table(true = data[-train, "y"], 
+                pred = predict(best, 
+                               newdata = data[-train,])) 
+    mc
+    
+    round(sum(diag(mc))/sum(colSums(mc)), 5)
+    
+    rs <- apply(mc, 1, sum)
+    r1 <- round(mc[1,]/rs[1], 5)
+    r2 <- round(mc[2,]/rs[2], 5)
+    rbind(No = r1, Yes = r2)
+    
+    # Ajustamos
+    fit <- svm(default ~ ., data = Default[train,], 
+               kernel = "radial", cost = 0.1, gamma = 1.51,
+               decision.values = TRUE)
+   
+    
+    

@@ -66,6 +66,6 @@
     # 2
     #install.packages("fbRanks")
     library(fbRanks)
-    listasoccer <- create.fbRanks.dataframes("data/soccer.csv")
+    listasoccer <- create.fbRanks.dataframes("data/soccer.csv", date.format = "%d/%m/%Y")
     
     

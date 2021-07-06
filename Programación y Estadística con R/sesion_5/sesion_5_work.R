@@ -200,7 +200,7 @@
     # Realicemos el gráfico de dispersión análogo al punto 2, pero para los conjuntos de entrenamiento y de prueba.
     
     set.seed(2020)
-    # sample(data, size)
+    # sample(data, size) 
     train = sample(nrow(Default), round(nrow(Default)/2))
     tail(Default[train, ])
     
@@ -242,6 +242,12 @@
     # Aquí un resumen del modelo seleccionado
     summary(tune.rad$best.model)
     
+    
+    # Grafico de los errores contra el parametro gamma
+    # Se observa que se toma el error mínimo, es decir el más bajo de la grafica.
+    ggplotly( tune.rad$performances %>% ggplot(aes(tune.rad$performances$gamma, tune.rad$performances$error)) +
+                  geom_line() )
+    
     # A continuación solo usamos los valores de cost y gamma que producen el menor error de prueba estimado, considerando los conjuntos de valores en el código anterior
     
     best <- svm(default~.,  data = Default[train,],
@@ -250,38 +256,51 @@
                 gamma = 1.51
     )
     
-    # 5. Con el mejor modelo seleccionado y utilizando el conjunto de prueba, obtengamos una matriz de confusión, para observar el número de aciertos y errores cometidos por el modelo. También obtengamos la proporción total de aciertos y la matriz que muestre las proporciones de aciertos y errores cometidos pero por categorías.
+    # 5. Con el mejor modelo seleccionado y utilizando el conjunto de prueba, 
+    # obtengamos una MATRIZ DE CONFUSION, para observar el número de aciertos y errores cometidos por el modelo. 
+    # También obtengamos la proporción total de aciertos y la matriz que muestre las proporciones de aciertos y errores cometidos pero por categorías.
     
+    # Usamos el modelo prueba que no tocamos y con predic tomamos el mejor modelo de entrenameinto
+    # y se lo aplicamos al de prueba y comparamos.
     mc <- table(true = Default[-train, "default"], 
                 pred = predict(best, 
                                newdata = Default[-train,]))
+    
+    # EL modelo se interpreta por diagonales: La maquina Predijo que no caeran en default 4,803
+    # y dijo que es verdad comparandolo con el real.
+    # 131 no caen en default segun el modelo, pero la verdd es que si caen en default.
     mc
     
     # El porcentaje total de aciertos obtenido por el modelo usando el 
     # conjunto de prueba es el siguiente
     
-    round(sum(diag(mc))/sum(colSums(mc)), 5)
+    round(sum(diag(mc))/sum(colSums(mc)), 5) #Nivel de aciertos del modelo: 97%
+    
     
     # Ahora observemos las siguientes proporciones
-    
     rs <- apply(mc, 1, sum)
     r1 <- round(mc[1,]/rs[1], 5)
     r2 <- round(mc[2,]/rs[2], 5)
-    rbind(No=r1, Yes=r2)
+    rbind(No = r1, Yes = r2) # La misma matriz en porcentaje
     
-    # 6. Ajustemos nuevamente el mejor modelo, pero ahora con el argumento decision.values = TRUE. Obtengamos los valores predichos para el conjunto de prueba utilizando el mejor modelo, las funciones predict, attributes y el argumento decision.values = TRUE dentro de predict.
-    
+    # 6. Ajustemos nuevamente el mejor modelo, pero ahora con el argumento decision.values = TRUE. 
+    # Obtengamos los valores predichos para el conjunto de prueba utilizando el mejor modelo, 
+    # las funciones predict, attributes y el argumento decision.values = TRUE dentro de predict.
+    # Esto dara una calificacion del modelo
     fit <- svm(default ~ ., data = Default[train,], 
                kernel = "radial", cost = 100, gamma = 1.51,
                decision.values = TRUE)
     
+    # Calculamos los valores asociados a cada uno de los datos, estos valores tienen un umbral
     fitted <- attributes(predict(fit, Default[-train,], 
                                  decision.values = TRUE))$decision.values
     
-    # 7. Realicemos clasificación de las observaciones del conjunto de prueba utilizando los valores predichos por el modelo y un umbral de decisión igual a cero. También obtengamos la matriz de confusión y proporciones como anteriormente hicimos.
-    
+    # 7. Realicemos clasificación de las observaciones del conjunto de prueba utilizando los valores predichos 
+    # por el modelo y un umbral de decisión igual a cero. 
+    # También obtengamos la matriz de confusión y proporciones como anteriormente hicimos.
     eti <- ifelse(fitted < 0, "Yes", "No")
     
+    # Obteenemos la misma matriz que obtuvimos usando predict
     mc <- table(true = Default[-train, "default"], 
                 pred = eti)
     mc
@@ -293,7 +312,8 @@
     r2 <- round(mc[2,]/rs[2], 5)
     rbind(No=r1, Yes=r2)
     
-    # 8. Repitamos el paso 7 pero con un umbral de decisión diferente, de tal manera que se reduzca la proporción del error más grave para la compañía de tarjetas de crédito.
+    # 8. Repitamos el paso 7 pero con un umbral de decisión diferente, 
+    # de tal manera que se reduzca la proporción del error más grave para la compañía de tarjetas de crédito.
     
     eti <- ifelse(fitted < 1.002, "Yes", "No")
     
@@ -307,3 +327,4 @@
     r1 <- round(mc[1,]/rs[1], 5)
     r2 <- round(mc[2,]/rs[2], 5)
     rbind(No=r1, Yes=r2)
+    
