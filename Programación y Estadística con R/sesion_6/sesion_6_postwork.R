@@ -42,8 +42,14 @@
     # 4. Grafico del pormedio mensual del total de goles
     plot(serie, main = "Promedio mesual del total de goles", xlab = "Periodo", ylab = "Promedio de goles")
     
-     
     
-    
+    # Con ggplot
+    library(ggplot2)
+    library(ggfortify)
+    serie %>%
+        autoplot(ts.colour = "blue") +
+        ggtitle(" Promedio mensual del total de goles") +
+        xlab("Año") + ylab("Promedio de goles") +
+        theme_test()
     
     
