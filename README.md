@@ -1,4 +1,4 @@
-# Data Science Programm BEDU-Santander-2021
+# Data Science Program BEDU-Santander-2021
 Repositorio los Módulos del programa Data Science de BEDU en colaboración con Santander
 
 1. [Introducción a Bases de Datos **(SQL)**](https://github.com/LIZZETHGOMEZ/BEDU-Santander-2021/tree/main/Introduccion%20a%20Bases%20de%20Datos)
